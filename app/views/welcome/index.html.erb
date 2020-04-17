@@ -1,0 +1,9 @@
+<%# Utilização do 'ERB- enbebed ruby/ruby misturado'%>
+<h1>Bem-vindo!</h1>
+<p>Bem vindo <%= "Gustavo" %>. você esta em ambiente de <%= env_pt(Rails.env) %> </p><%# Utilização de HTML5 e Ruby juntos, com a sintaxe '<%=' para mostrar o codigo na saida %>
+<p> <strong>Data:</strong> <%= date_pt(Date.today)%></p>
+<ul>
+  <li>
+    <%= link_to  "Cripto moedas", coins_path %>  <%# Helper 'link_to' substitui o a tag HTML 'a', criando uma rota em Ruby%>
+  </li>
+</ul>
