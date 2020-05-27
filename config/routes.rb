@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mining_types
   get 'welcome/index'
   #get 'welcome/index, to: 'welcome#index' // o # serve para separar controller da ação'
   resources :coins #resource mapeia os 7 routes do recurso coins para a utilização do crud

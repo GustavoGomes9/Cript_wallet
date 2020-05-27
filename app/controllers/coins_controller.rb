@@ -1,4 +1,6 @@
 class CoinsController < ApplicationController
+  layout "adm" # carregando layout 'adm.html.erb' para todos os views da controller coins 
+
   before_action :set_coin, only: [:show, :edit, :update, :destroy]
 
   # GET /coins
@@ -69,6 +71,6 @@ class CoinsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def coin_params
-      params.require(:coin).permit(:description, :acronym, :url_image)
+      params.require(:coin).permit(:description, :acronym, :url_image, :mining_type_id)
     end
 end
