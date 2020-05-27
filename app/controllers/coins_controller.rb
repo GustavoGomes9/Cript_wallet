@@ -2,7 +2,7 @@ class CoinsController < ApplicationController
   layout "adm" # carregando layout 'adm.html.erb' para todos os views da controller coins 
 
   before_action :set_coin, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_mining_type_id, only: [:create, :edit, :update]
   # GET /coins
   # GET /coins.json
   def index
@@ -64,6 +64,11 @@ class CoinsController < ApplicationController
   end
 
   private
+
+    # Faz um select dentro do banco miningTypes e retorna a description e id
+    def set_mining_type_id
+      @mining_type_id = MiningType.all.pluck(:description, :id)
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_coin
       @coin = Coin.find(params[:id])
